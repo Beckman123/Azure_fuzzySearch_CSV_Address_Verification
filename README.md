@@ -1,4 +1,4 @@
-#Azure Fuzzy Search
+<h1>Azure Fuzzy Search</h1>
 
 This python script uses Azure maps, specifically Azure Fuzzy search.
 
