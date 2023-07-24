@@ -1,4 +1,4 @@
-from Address_Reader import read_csv_file, address, city, country, zip_, customer_no
+from Address_Reader import read_csv_file, address, city, country, zip_, customer_no, name
 from Write_Output import write_output
 from AzureCall import lookup
 from secrets import secrets
@@ -12,11 +12,11 @@ valid_location_list =[]
 secret_key = secrets.get('USER_KEY')
 
 if __name__ == "__main__":
-    file_name = "AddressReader.csv"
+    file_name = "AddressReader"
     read_csv_file(file_name) 
     #for statement calls the Azure API as many times as there are addresses
     for i in range (0, len(address)):
-        adress_fin,city_fin,country_fin,zip_fin,valid_location= lookup(secret_key,address[i],city[i],country[i],zip_[i])
+        adress_fin,city_fin,country_fin,zip_fin,valid_location= lookup(secret_key,name[i], address[i],city[i],country[i],zip_[i])
         address_fin_list.append(adress_fin)
         city_fin_list.append(city_fin)
         country_fin_list.append(country_fin)
