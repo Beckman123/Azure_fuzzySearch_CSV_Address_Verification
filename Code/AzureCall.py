@@ -25,7 +25,10 @@ def lookup(secret_key,address,city,country,zip_):
             except:
                 address_json = addressData["streetName"]
             ###########
-            city_json = addressData["municipality"]
+            try:
+                city_json = addressData["localName"]
+            except:
+                city_json = addressData["municipality"]
             zip_json =  str(addressData["postalCode"])
             country_json = addressData["countryCodeISO3"]
             valid_location = True
